@@ -4,9 +4,8 @@
   "description": "server for grade forest",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npx tsc --outDir ./dist",
-    "start": "node ./dist/server.js"
+    "start": "npx tsc --outDir ./dist ./server.ts && copyfiles .env ./dist/ && node ./dist/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Ali Tavakoli",
   "license": "MIT",
@@ -17,7 +16,7 @@
     "express-jwt": "^6.1.0",
     "helmet": "^4.6.0",
     "jsonwebtoken": "^8.5.1",
-    "jwks-rsa": "^3.0.5",
+    "jwks-rsa": "^2.0.5",
     "mongoose": "^6.1.4",
     "morgan": "^1.10.0"
   },
