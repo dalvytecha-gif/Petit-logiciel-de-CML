@@ -46,6 +46,9 @@ app.use(cors(corsOptions));
 // gradeforest-backend/public avant le démarrage du serveur.
 import path = require("path");
 var distDir = path.join(__dirname, "..", "public");
+app.use(express.static(distDir));
+
+// Init the server
 
 // Init the server
 var server = app.listen(process.env.PORT || 64200, function () {
