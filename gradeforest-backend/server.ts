@@ -41,11 +41,11 @@ var corsOptions = {
 
 app.use(cors(corsOptions));
 
-// Create link to Angular build directory
-// The `ng build` command will save the result
-// under the `dist` folder.
-var distDir = __dirname + "/dist/";
-app.use(express.static(distDir));
+// Create link to Angular build directory.
+// On Render, le build Angular (production) est copié dans
+// gradeforest-backend/public avant le démarrage du serveur.
+import path = require("path");
+var distDir = path.join(__dirname, "..", "public");
 
 // Init the server
 var server = app.listen(process.env.PORT || 64200, function () {
