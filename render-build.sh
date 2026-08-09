@@ -6,13 +6,13 @@ set -e
 
 echo "== Build du frontend (Angular) =="
 cd gradeforest-frontend
-npm install
+npm install --include=dev
 npx ng build --configuration production
 cd ..
 
 echo "== Build du backend (TypeScript) =="
 cd gradeforest-backend
-npm install
+npm install --include=dev
 npx tsc -p .
 cd ..
 
